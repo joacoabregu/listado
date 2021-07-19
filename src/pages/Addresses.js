@@ -40,7 +40,7 @@ function Addresses() {
                             <td >{address.buildingNumber}</td>
                             <td >{address.city}</td>
                             <td >{address.zipcode}</td>
-
+                            <td >{address.country}</td>
                         </tr>
                     )
                 })}
