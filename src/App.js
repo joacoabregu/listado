@@ -4,6 +4,7 @@ import Addresses from './pages/Addresses';
 import Navigation from './Navigation';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './pages/Home';
+import Products from './pages/Products';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/books">
             <Books />
+          </Route>
+          <Route path="/products">
+            <Products />
           </Route>
 
       </Switch>            
