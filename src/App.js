@@ -3,6 +3,7 @@ import Books from './pages/Books';
 import Addresses from './pages/Addresses';
 import Navigation from './Navigation';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Home from './pages/Home';
 
 
 function App() {
@@ -10,6 +11,9 @@ function App() {
     <Router>
       <Navigation />
       <Switch>
+          <Route exact path="/">
+              <Home/>
+          </Route>
           <Route path="/addresses">
               <Addresses />
           </Route>
@@ -17,9 +21,6 @@ function App() {
             <Books />
           </Route>
 
-          <Route path="/">
-              <p>Estas en Home</p>
-          </Route>
       </Switch>            
   </Router>
   );
