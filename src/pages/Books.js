@@ -8,7 +8,7 @@ function Books() {
     useEffect(() =>{
        axios.get('https://fakerapi.it/api/v1/books')
         .then((response) => {
-            console.log(response.data.data);
+            console.log(response.data);
             setBooks(response.data.data);
         })
         .catch((error) => {
@@ -16,11 +16,45 @@ function Books() {
         })
 
     }, [])
-    return(
-        books.map((book, index) => {
-            return <p key={index}>{book.title}</p>
-        })
-    )
+    if(!books.length){
+        return <h1>Not Found</h1>       
+    } else{
+        return(
+            <table >
+                <thead>
+                <tr>
+                    <th >Title</th>
+                    <th >Author</th>
+                    <th >Genre</th>
+                    <th >Description</th>
+                    <th >ISBN</th>
+                    <th >Cover</th>
+                    <th >Published</th>
+                    <th >Publisher</th>
+                </tr>
+                </thead>
+                <tbody>
+                {books.map((book, index) => {
+                    return (
+                        <tr key={index} >
+                            <td >{book.title}</td>
+                            <td >{book.author}</td>
+                            <td >{book.genre}</td>
+                            <td >{book.description}</td>
+                            <td >{book.isbn}</td>
+                            <td><img alt="cover" src={book.image}  /></td>     
+                            <td >{book.published}</td>
+                            <td >{book.publisher}</td>
+
+                        </tr>
+                    )
+                })}
+                </tbody>
+            </table>
+            
+        )
+    }
+    
 }
 
 export default Books;
