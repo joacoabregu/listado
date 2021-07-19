@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 function Navigation(){
     return (
     <header className="App-header">
-        <p>Listado</p>  
         <nav>
           <ul>
             <li>
