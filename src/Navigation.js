@@ -1,9 +1,23 @@
+import {Link} from 'react-router-dom';
+
 function Navigation(){
     return (
     <header className="App-header">
-        <p>
-        Listado
-        </p>
+        <p>Listado</p>  
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/books">Books</Link>
+            </li>
+            <li>
+              <Link to="/addresses">Addresses</Link>
+            </li>
+          </ul>
+        </nav>
+
     </header>
   )
 
