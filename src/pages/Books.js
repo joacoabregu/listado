@@ -17,7 +17,7 @@ function Books() {
 
     }, [])
     if(!books.length){
-        return <h1>Not Found</h1>       
+        return <h1>Searching...</h1>       
     } else{
         return(
             <table >
