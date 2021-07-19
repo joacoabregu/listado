@@ -42,7 +42,7 @@ function Books() {
                             <td >{book.genre}</td>
                             <td >{book.description}</td>
                             <td >{book.isbn}</td>
-                            <td><img alt="cover" src={book.image}  /></td>     
+                            <td><img alt="cover" src={book.image} width="640" height="480" /></td>     
                             <td >{book.published}</td>
                             <td >{book.publisher}</td>
 

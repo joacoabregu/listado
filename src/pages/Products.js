@@ -36,7 +36,7 @@ function Products() {
                             <td >{product.name}</td>
                             <td >{product.description}</td>
                             <td >{product.price}</td>
-                            <td><img alt="cover" src={product.image} /></td>  
+                            <td><img alt="cover" src={product.image} width="640" height="480"/></td>  
 
                         </tr>
                     )
