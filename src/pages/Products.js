@@ -8,7 +8,6 @@ function Products() {
     useEffect(() =>{
        axios.get('https://fakerapi.it/api/v1/products')
         .then((response) => {
-            console.log(response.data);
             setProducts(response.data.data);
         })
         .catch((error) => {

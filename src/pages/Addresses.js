@@ -8,7 +8,6 @@ function Addresses() {
     useEffect(() =>{
        axios.get('https://fakerapi.it/api/v1/addresses')
         .then((response) => {
-            console.log(response.data);
             setAddresses(response.data.data);
         })
         .catch((error) => {

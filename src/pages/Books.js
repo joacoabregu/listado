@@ -11,7 +11,6 @@ function Books() {
     useEffect(() =>{
        axios.get('https://fakerapi.it/api/v1/books')
         .then((response) => {
-            console.log(response.data);
             setBooks(response.data.data);
         })
         .catch((error) => {
@@ -24,7 +23,6 @@ function Books() {
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
   const currentPosts = books.slice(indexOfFirstBook, indexOfLastBook);
-
 
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
