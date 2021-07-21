@@ -1,9 +1,12 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';
+import Pagination from '../components/Pagination'
 
 
 function Books() {
     let [books, setBooks] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [booksPerPage] = useState(5);
 
     useEffect(() =>{
        axios.get('https://fakerapi.it/api/v1/books')
@@ -16,10 +19,21 @@ function Books() {
         })
 
     }, [])
+
+    // Get current books
+  const indexOfLastBook = currentPage * booksPerPage;
+  const indexOfFirstBook = indexOfLastBook - booksPerPage;
+  const currentPosts = books.slice(indexOfFirstBook, indexOfLastBook);
+
+
+  // Change page
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
     if(!books.length){
         return <h1>Searching...</h1>       
     } else{
         return(
+            <>
             <table >
                 <thead>
                 <tr>
@@ -34,7 +48,7 @@ function Books() {
                 </tr>
                 </thead>
                 <tbody>
-                {books.map((book, index) => {
+                {currentPosts.map((book, index) => {
                     return (
                         <tr key={index} >
                             <td >{book.title}</td>
@@ -51,6 +65,12 @@ function Books() {
                 })}
                 </tbody>
             </table>
+            <Pagination
+            perPage={booksPerPage}
+            total={books.length}
+            paginate={paginate}
+          />
+          </>
             
         )
     }
