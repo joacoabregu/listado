@@ -1,3 +1,6 @@
+# Material Consultado
+[Paginación](https://github.com/bradtraversy/simple_react_pagination)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

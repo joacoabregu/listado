@@ -49,7 +49,9 @@ td {
 }
 
 td > img {
-  max-width: 200px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: attr(640) / attr(480);
 }
 
 .emoji {
@@ -62,4 +64,13 @@ td > img {
   to {
     transform: rotate(360deg);
   }
+}
+
+.page-link {
+  color: #282c34;
+  text-align: center;
+  border: 1px solid #282c34;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  margin: 0 1em;
 }
