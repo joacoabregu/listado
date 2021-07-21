@@ -37,6 +37,7 @@ table {
 th {
   color: white;
   background-color: #282c34;
+  padding: 0.5em;
 }
 
 tr:nth-child(even) {
