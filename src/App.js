@@ -1,10 +1,11 @@
+import React, { Suspense } from 'react';
 import './App.css';
-import Books from './pages/Books';
-import Addresses from './pages/Addresses';
 import Navigation from './Navigation';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './pages/Home';
-import Products from './pages/Products';
+const Products = React.lazy(() => import('./pages/Products'));
+const Addresses = React.lazy(() => import('./pages/Addresses'));
+const Books = React.lazy(() => import('./pages/Books'));
 
 
 function App() {
@@ -16,13 +17,19 @@ function App() {
               <Home/>
           </Route>
           <Route path="/addresses">
+            <Suspense fallback={<div>Loading...</div>}>
               <Addresses />
+            </Suspense>
           </Route>
           <Route path="/books">
-            <Books />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Books />
+            </Suspense>
           </Route>
           <Route path="/products">
-            <Products />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Products />
+            </Suspense>
           </Route>
 
       </Switch>            

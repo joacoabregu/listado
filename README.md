@@ -1,5 +1,6 @@
 # Material Consultado
 [Paginación](https://github.com/bradtraversy/simple_react_pagination)
+[React.lazy](https://es.reactjs.org/docs/code-splitting.html#reactlazy)
 
 # Getting Started with Create React App
 
